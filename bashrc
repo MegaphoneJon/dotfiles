@@ -30,3 +30,7 @@ function crg() {
 
 export pts=~/ownCloud/Shared/Palante*Shared
 export cl=~/ownCloud/Shared/Palante*Shared/Current*Projects
+
+function me() {
+    echo "hextile" | ssvncviewer -scale .8 -autopass -encodings "zywrle tight hextile copyrect" B1RNML2 &> /dev/null &
+}
