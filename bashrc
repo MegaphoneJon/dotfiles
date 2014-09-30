@@ -1,0 +1,29 @@
+function o()
+{
+    xdg-open "$1"
+}
+
+function chc()
+{
+    xdg-open "$HOME/ownCloud/Shared/Palante Tech Shared/Administrative/Bookkeeping/hours worked charts 2014.ods"
+}
+
+function cr()
+{
+    gpg --quiet -d "$HOME/ownCloud/Shared/Palante Tech Shared/Credentials/"$1'_credentials.txt.gpg'
+}
+
+function cro()
+{
+    gpg -do '/tmp/'$1'_credentials.txt' "$HOME/ownCloud/Shared/Palante Tech Shared/Credentials/"$1'_credentials.txt.gpg'
+      vi '/tmp/'$1'_credentials.txt'
+}
+
+function cre() {
+    gpg -eso "$HOME/ownCloud/Shared/Palante Tech Shared/Credentials/"$1'_credentials.txt.gpg' -r 47AF31A6DE800B77 -r 05431C1FC47B97F5 -r 0A279E082B64B3CA -r 246DB6ED051F78D6 -r C1983031ABC56AB1 -r A5C77224F7958C93 '/tmp/'$1'_credentials.txt'
+      rm /tmp/*_credentials.txt
+}
+
+function crg() {
+    gpg --quiet -d "$HOME/ownCloud/Shared/Palante Tech Shared/Credentials/"$1'_credentials.txt.gpg' | grep git -A 1
+}
