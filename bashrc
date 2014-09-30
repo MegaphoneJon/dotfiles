@@ -27,3 +27,6 @@ function cre() {
 function crg() {
     gpg --quiet -d "$HOME/ownCloud/Shared/Palante Tech Shared/Credentials/"$1'_credentials.txt.gpg' | grep git -A 1
 }
+
+export pts=~/ownCloud/Shared/Palante*Shared
+export cl=~/ownCloud/Shared/Palante*Shared/Current*Projects
