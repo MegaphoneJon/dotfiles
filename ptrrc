@@ -1,0 +1,5 @@
+#configuration
+VNC_EXECUTABLE="ssvncviewer";
+RDP_EXECUTABLE="rdesktop";
+REMOTE_SHELL_EXECUTABLE="winexe"
+CREDS_PATH="/home/jon/ownCloud/Shared/Palante Tech Shared/Credentials"
