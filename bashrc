@@ -10,7 +10,7 @@ function chc()
 
 function cr()
 {
-    gpg --quiet -d "$HOME/ownCloud/Shared/Palante Tech Shared/Credentials/"$1'_credentials.txt.gpg'
+    gpg --quiet --no-tty -d "$HOME/ownCloud/Shared/Palante Tech Shared/Credentials/"$1'_credentials.txt.gpg' 2> /dev/null
 }
 
 function cro()
