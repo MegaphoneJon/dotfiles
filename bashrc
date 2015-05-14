@@ -1,3 +1,19 @@
+function ssh()
+{
+  /usr/bin/ssh -F ~/ownCloud/Shared/Palante\ Tech\ Shared/SSH\ Keys/config_files/ssh_config "$@" 
+  if [ "$?" -eq 255 ]; then
+    /usr/bin/ssh $@
+  fi
+}
+
+function scp()
+{
+  /usr/bin/scp -F ~/ownCloud/Shared/Palante\ Tech\ Shared/SSH\ Keys/config_files/ssh_config "$@"
+    if [ "$?" -eq 1 ]; then
+          /usr/bin/scp "$@"
+    fi
+}
+
 function o()
 {
     xdg-open "$1"
@@ -5,7 +21,7 @@ function o()
 
 function chc()
 {
-    xdg-open "$HOME/ownCloud/Shared/Palante Tech Shared/Administrative/Bookkeeping/hours worked charts 2014.ods"
+    xdg-open "$HOME/ownCloud/Shared/Palante Tech Shared/Administrative/Bookkeeping/hours worked charts 2015.ods"
 }
 
 function cr()
@@ -35,3 +51,4 @@ export cl=~/ownCloud/Shared/Palante*Shared/Current*Projects
 function me() {
     echo "hextile" | ssvncviewer -scale .8 -autopass -encodings "zywrle tight hextile copyrect" B1RNML2 &> /dev/null &
 }
+CIVICRM_LOCALES=en_US
