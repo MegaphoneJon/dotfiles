@@ -1,3 +1,9 @@
+" Following lines added by drush vimrc-install on Mon, 19 Jan 2015 03:27:04 +0000.
+set nocompatible
+call pathogen#infect('/home/jon/.drush/vimrc/bundle/{}')
+call pathogen#infect('/home/jon/.vim/bundle/{}')
+filetype plugin on
+" End of vimrc-install additions.
 set expandtab
 set tabstop=2
 set shiftwidth=2
