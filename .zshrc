@@ -123,18 +123,26 @@ function me() {
 
 function ssh()
 {
-  /usr/bin/ssh -F ~/ownCloud/Shared/Palante\ Tech\ Shared/SSH\ Keys/config_files/ssh_config "$@"
+  /usr/bin/ssh $@
   if [ "$?" -eq 255 ]; then
-    /usr/bin/ssh $@
+    /usr/bin/ssh -F ~/ownCloud/Shared/Palante\ Tech\ Shared/SSH\ Keys/config_files/ssh_config "$@"
+  fi
+}
+
+function rsync()
+{
+  /usr/bin/rsync $@
+  if [ "$?" -eq 255 ]; then
+    /usr/bin/rsync -e "/usr/bin/ssh -F '/home/jon/ownCloud/Shared/Palante Tech Shared/SSH Keys/config_files/ssh_config'" "$@"
   fi
 }
 
 function scp()
 {
-  /usr/bin/scp -F ~/ownCloud/Shared/Palante\ Tech\ Shared/SSH\ Keys/config_files/ssh_config "$@"
+  /usr/bin/scp "$@"
     if [ "$?" -eq 1 ]; then
-      echo "Using personal ssh config"
-          /usr/bin/scp "$@"
+      echo "Using shared ssh config"
+      /usr/bin/scp -F ~/ownCloud/Shared/Palante\ Tech\ Shared/SSH\ Keys/config_files/ssh_config "$@"
     fi
 }
 

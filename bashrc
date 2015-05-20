@@ -1,8 +1,8 @@
 function ssh()
 {
-  /usr/bin/ssh -F ~/ownCloud/Shared/Palante\ Tech\ Shared/SSH\ Keys/config_files/ssh_config "$@" 
+  /usr/bin/ssh $@
   if [ "$?" -eq 255 ]; then
-    /usr/bin/ssh $@
+    /usr/bin/ssh -F ~/ownCloud/Shared/Palante\ Tech\ Shared/SSH\ Keys/config_files/ssh_config "$@" 
   fi
 }
 
