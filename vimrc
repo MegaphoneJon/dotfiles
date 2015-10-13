@@ -22,3 +22,12 @@ if has("autocmd")
   augroup END
 endif
 syntax on
+set number
+set showcmd             " show command in bottom bar
+set cursorline          " highlight current line
+set wildmenu            " visual autocomplete for command menu
+set showmatch           " highlight matching [{()}]
+set incsearch           " search as characters are entered
+set hlsearch            " highlight matches
+turn off search highlight
+nnoremap <leader><space> :nohlsearch<CR>
