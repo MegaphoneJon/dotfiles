@@ -32,3 +32,5 @@ set hlsearch            " highlight matches
 " turn off search highlight
 nnoremap <leader><space> :nohlsearch<CR>
 let mapleader=","       " leader is comma
+" jk is escape
+inoremap jk <esc>
