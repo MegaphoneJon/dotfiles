@@ -2,3 +2,4 @@
 export ZDOTDIR="$HOME/dotfiles/zsh"
 export VIMINIT='let $MYVIMRC="$HOME/dotfiles/vim/vimrc" | source $MYVIMRC'
 export VIMDOTDIR="$HOME/dotfiles/vim"
+export ZSH_CUSTOM="$HOME/dotfiles/oh-my-zsh/custom"
