@@ -166,6 +166,7 @@ demo=~/local/demo
 dwb=/var/www/dwb
 fcd=~/local/fcd
 ilrf=/var/www/ilrf
+gsa=~/local/gsa
 hcn=~/local/hcn
 lccr=~/local/lccr
 lm=/var/www/lm
