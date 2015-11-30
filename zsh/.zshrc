@@ -125,7 +125,7 @@ function ssh()
 {
   /usr/bin/ssh $@
   if [ "$?" -eq 255 ]; then
-    /usr/bin/ssh -F ~/ownCloud/Shared/Palante\ Tech\ Shared/SSH\ Keys/config_files/ssh_config "$@"
+    /usr/bin/ssh -F $HOME/ownCloud/Shared/Palante\ Tech\ Shared/SSH\ Keys/config_files/ssh_config "$@"
   fi
 }
 
@@ -142,7 +142,7 @@ function scp()
   /usr/bin/scp "$@"
     if [ "$?" -eq 1 ]; then
       echo "Using shared ssh config"
-      /usr/bin/scp -F ~/ownCloud/Shared/Palante\ Tech\ Shared/SSH\ Keys/config_files/ssh_config "$@"
+      /usr/bin/scp -F $HOME/ownCloud/Shared/Palante\ Tech\ Shared/SSH\ Keys/config_files/ssh_config "$@"
     fi
 }
 
