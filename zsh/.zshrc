@@ -191,6 +191,7 @@ wp44=~/local/civicrm-buildkit/build/wp44/wp-content/plugins/civicrm/civicrm
 wp45=~/local/civicrm-buildkit/build/wp45/wp-content/plugins/civicrm/civicrm
 wp46=~/local/civicrm-buildkit/build/wp46/wp-content/plugins/civicrm/civicrm
 joomla46=~/local/civicrm-buildkit/build/joomla46
+backdrop=~/local/backdrop
 PATH=$PATH:/home/jon/local/wp-cli:/home/jon/local/civicrm-buildkit/bin
 
 CIVICRM_LOCALES=en_US
