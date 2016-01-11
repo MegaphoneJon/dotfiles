@@ -93,7 +93,7 @@ function co()
 
 function chc()
 {
-      xdg-open "$HOME/ownCloud/Shared/Palante Tech Shared/Administrative/Bookkeeping/hours worked charts 2015.ods"
+      xdg-open "$HOME/ownCloud/Shared/Palante Tech Shared/Administrative/Bookkeeping/hours worked charts 2016.ods"
 }
 
 function cr()
