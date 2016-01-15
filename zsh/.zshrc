@@ -178,6 +178,7 @@ opencenter=~/local/opencenter
 ppnorcal=/var/www/ppnorcal
 ppsp=/var/www/ppsp
 redup=~/local/redup
+tan=~/local/tan
 ujc=/var/www/ujc
 wke=~/local/wke
 wrl=~/local/wrl
