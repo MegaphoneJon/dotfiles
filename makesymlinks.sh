@@ -6,7 +6,10 @@
 
 ########## Variables
 
+# Install oh-my-zsh
+sh -c "$(curl -fsSL https://raw.github.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
 dir=~/dotfiles                    # dotfiles directory
+
 olddir=~/dotfiles_old             # old dotfiles backup directory
 files="bashrc vimrc vim ptrrc gitconfig profile selected_editor zshenv oh-my-zsh"    # list of files/folders to symlink in homedir
 
@@ -30,4 +33,3 @@ for file in $files; do
     ln -s $dir/$file ~/.$file
 done
 
-sh -c "$(curl -fsSL https://raw.github.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
