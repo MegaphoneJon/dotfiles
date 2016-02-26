@@ -14,7 +14,7 @@ case $HOST in
     HOSTCOLOR=136
     ;;
   *)
-    HOSTCOLOR=160
+    HOSTCOLOR=196
     ;;
 esac
 
