@@ -5,9 +5,22 @@
 if [ $UID -eq 0 ]; then NCOLOR="red"; else NCOLOR="green"; fi
 local return_code="%(?..%{$fg[red]%}%? ↵%{$reset_color%})"
 
+# change the prompt color based on local, Palante dev, or live server
+case $HOST in
+  mint)
+    HOSTCOLOR=032
+    ;;
+  curds | maple | albizu)
+    HOSTCOLOR=136
+    ;;
+  *)
+    HOSTCOLOR=202
+    ;;
+esac
+
 # primary prompt
 PROMPT='$FG[237]------------------------------------------------------------%{$reset_color%}
-$FG[032]%m: %~\
+$FG[$HOSTCOLOR]%m: %~\
 $(git_prompt_info) \
 $FG[105]%(!.#.»)%{$reset_color%} '
 PROMPT2='%{$fg[red]%}\ %{$reset_color%}'
