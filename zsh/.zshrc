@@ -196,3 +196,4 @@ backdrop=~/local/backdrop
 PATH=$PATH:/home/jon/local/wp-cli:/home/jon/local/civicrm-buildkit/bin
 
 CIVICRM_LOCALES=en_US
+umask 0002
