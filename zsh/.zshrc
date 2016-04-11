@@ -197,3 +197,10 @@ PATH=$PATH:/home/jon/local/wp-cli:/home/jon/local/civicrm-buildkit/bin
 
 CIVICRM_LOCALES=en_US
 umask 0002
+
+# Load all files from .shell/rc.d directory
+if [ -d $HOME/.shellrc/rc.d ]; then
+  for file in $HOME/.shellrc/rc.d/*.sh; do
+    source $file
+  done
+fi
