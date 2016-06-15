@@ -117,7 +117,7 @@ function crg() {
 }
 
 function me() {
-      echo "Maiolica" | ssvncviewer -scale .8 -autopass -encodings "zywrle tight hextile copyrect" B1RNML2 &> /dev/null &
+      echo "Maiolica" | ssvncviewer -scale .8 -autopass -encodings "zywrle tight hextile copyrect" Jon-PC &> /dev/null &
 }
 
 function ssh()
@@ -175,6 +175,7 @@ npap=~/local/npap
 nwu=~/local/nwu
 nyoc=~/local/opencenter
 opencenter=~/local/opencenter
+pp=~/local/pp
 ppnorcal=/var/www/ppnorcal
 ppsp=/var/www/ppsp
 redup=~/local/redup
@@ -184,6 +185,7 @@ ujc=/var/www/ujc
 wke=~/local/wke
 wrl=~/local/wrl
 dmaster=~/local/civicrm-buildkit/build/dmaster/sites/all/modules/civicrm
+bmaster=~/local/civicrm-buildkit/build/bmaster/modules/civicrm
 d44=~/local/civicrm-buildkit/build/d44/sites/all/modules/civicrm
 d45=~/local/civicrm-buildkit/build/d45/sites/all/modules/civicrm
 d46=~/local/civicrm-buildkit/build/d46/sites/all/modules/civicrm
