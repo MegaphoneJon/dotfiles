@@ -210,3 +210,6 @@ if [ -d $HOME/.shellrc/rc.d ]; then
     source $file
   done
 fi
+
+# Set the fpath (for custom completions)
+fpath=( ~/dotfiles/zsh_completions  "${fpath[@]}")
