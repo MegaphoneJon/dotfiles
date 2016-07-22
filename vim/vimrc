@@ -1,6 +1,6 @@
 " Following lines added by drush vimrc-install on Mon, 19 Jan 2015 03:27:04 +0000.
 set nocompatible
-call pathogen#infect('/home/jon/.drush/vimrc/bundle/{}')
+" call pathogen#infect('/home/jon/.drush/vimrc/bundle/{}')
 call pathogen#infect('/home/jon/.vim/bundle/{}')
 filetype plugin on
 " End of vimrc-install additions.
@@ -34,3 +34,4 @@ nnoremap <leader><space> :nohlsearch<CR>
 let mapleader=","       " leader is comma
 " jk is escape
 inoremap jk <esc>
+let g:syntastic_php_phpcs_args="--extensions=php --report=csv --standard=/home/jon/local/civicrm-buildkit/vendor/drupal/coder/coder_sniffer/Drupal"
