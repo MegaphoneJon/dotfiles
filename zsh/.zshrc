@@ -158,12 +158,12 @@ function scp()
 
 pts=~/ownCloud/Shared/Palante\ Tech\ Shared
 cl=~/ownCloud/Shared/Palante\ Tech\ Shared/Current\ Clients\ and\ Projects
+gitolite=~/local/gitolite-admin
 aclu=~/local/aclu
 ajla=~/local/ajla
 alpcivi=~/local/alpcivi
 cagj=~/local/cagj
 ccr=~/local/ccr
-cividev=/var/www/cividev
 cpehn=~/local/cpehn
 demo=~/local/demo
 fcd=~/local/fcd
@@ -181,7 +181,7 @@ ppnorcal=~/local/ppnorcal
 redup=~/local/redup
 soex=~/local/soex
 tan=~/local/tan
-ujc=/var/www/ujc
+ujc=~/local/ujc
 wke=~/local/wke
 wrl=~/local/wrl
 dmaster=~/local/civicrm-buildkit/build/dmaster/sites/all/modules/civicrm
