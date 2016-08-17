@@ -126,29 +126,23 @@ function me() {
 
 function ssh()
 {
-  /usr/bin/ssh $@
-  if [ "$?" -eq 255 ]; then
-    /usr/bin/ssh -F $HOME/ownCloud/Shared/Palante\ Tech\ Shared/SSH\ Keys/config_files/ssh_config "$@"
-  fi
+  ssh-combine; /usr/bin/ssh $@
 }
 
 function rsync()
 {
-  /usr/bin/rsync $@
-  if [ "$?" -eq 255 ]; then
-    /usr/bin/rsync -e "/usr/bin/ssh -F '/home/jon/ownCloud/Shared/Palante Tech Shared/SSH Keys/config_files/ssh_config'" "$@"
-  fi
+  ssh-combine; /usr/bin/rsync $@
 }
 
 function scp()
 {
-  /usr/bin/scp "$@"
-    if [ "$?" -eq 1 ]; then
-      echo "Using shared ssh config"
-      /usr/bin/scp -F $HOME/ownCloud/Shared/Palante\ Tech\ Shared/SSH\ Keys/config_files/ssh_config "$@"
-    fi
+  ssh-combine; /usr/bin/scp "$@"
 }
 
+function ssh-combine()
+{
+  cat $HOME/.ssh/config.d/* > $HOME/.ssh/config
+}
 
 #wp-cli
 #autoload bashcompinit
