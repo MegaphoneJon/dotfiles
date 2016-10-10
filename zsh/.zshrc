@@ -150,34 +150,7 @@ function ssh-combine()
 #source ~/local/wp-cli/wp-completion.bash
 
 
-pts=~/ownCloud/Shared/Palante\ Tech\ Shared
-cl=~/ownCloud/Shared/Palante\ Tech\ Shared/Current\ Clients\ and\ Projects
-gitolite=~/local/gitolite-admin
-aclu=~/local/aclu
-ajla=~/local/ajla
-alpcivi=~/local/alpcivi
-cagj=~/local/cagj
-ccr=~/local/ccr
-cpehn=~/local/cpehn
-demo=~/local/demo
-fcd=~/local/fcd
-gsa=~/local/gsa
-hcn=~/local/hcn
-lccr=~/local/lccr
-newpress=~/local/newpress
-nlg=~/local/nlg
-npap=~/local/npap
-nwu=~/local/nwu
-nyoc=~/local/opencenter
-opencenter=~/local/opencenter
-pp=~/local/pp
-ppnorcal=~/local/ppnorcal
-redup=~/local/redup
-soex=~/local/soex
-tan=~/local/tan
-ujc=~/local/ujc
-wke=~/local/wke
-wrl=~/local/wrl
+work=~/ownCloud/work
 dmaster=~/local/civicrm-buildkit/build/dmaster/sites/all/modules/civicrm
 bmaster=~/local/civicrm-buildkit/build/bmaster/modules/civicrm
 d44=~/local/civicrm-buildkit/build/d44/sites/all/modules/civicrm
