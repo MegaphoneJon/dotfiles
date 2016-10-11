@@ -98,26 +98,26 @@ function chc()
 
 function cr()
 {
-      gpg --quiet --no-tty -d "$HOME/ownCloud/Shared/Palante Tech Shared/Credentials/"$1'_credentials.txt.gpg' 2> /dev/null
+      gpg --quiet --no-tty -d "$HOME/ownCloud/work/Credentials/"$1'_credentials.txt.gpg' 2> /dev/null
 }
 
 function cro()
 {
-      gpg -do '/tmp/'$1'_credentials.txt' "$HOME/ownCloud/Shared/Palante Tech Shared/Credentials/"$1'_credentials.txt.gpg'
+      gpg -do '/tmp/'$1'_credentials.txt' "$HOME/ownCloud/work/Credentials/"$1'_credentials.txt.gpg'
             vi '/tmp/'$1'_credentials.txt'
 }
 
 function cre() {
-            gpg -eso "$HOME/ownCloud/Shared/Palante Tech Shared/Credentials/"$1'_credentials.txt.gpg' -r 2614802205808E10 -r 05431C1FC47B97F5 -r 0A279E082B64B3CA -r 0DC025928E9AA851 -r C1983031ABC56AB1 -r A5C77224F7958C93 -r A8D94288FBC3B3AB '/tmp/'$1'_credentials.txt'
+            gpg -eso "$HOME/ownCloud/work/Credentials/"$1'_credentials.txt.gpg' -r 0DC025928E9AA851 '/tmp/'$1'_credentials.txt'
             rm /tmp/*_credentials.txt
 }
 
 function crg() {
-      gpg --quiet -d "$HOME/ownCloud/Shared/Palante Tech Shared/Credentials/"$1'_credentials.txt.gpg' | grep git -A 1
+      gpg --quiet -d "$HOME/ownCloud/work/Credentials/"$1'_credentials.txt.gpg' | grep git -A 1
 }
 
 function gpge() {
-  gpg -e -r 2614802205808E10 -r 05431C1FC47B97F5 -r 0A279E082B64B3CA -r 0DC025928E9AA851 -r C1983031ABC56AB1 -r A5C77224F7958C93 -r A8D94288FBC3B3AB "$1" 
+  gpg -e -r 0DC025928E9AA851 "$1" 
 }
 
 function me() {
@@ -174,5 +174,6 @@ if [ -d $HOME/.shellrc/rc.d ]; then
   done
 fi
 
+# FIXME: I don't think I need this now that I've switched my strategy for combined SSH configs
 # Set the fpath (for custom completions)
 fpath=( ~/dotfiles/zsh_completions  "${fpath[@]}")
