@@ -90,12 +90,6 @@ function co()
   xdg-open "$1"
 }
 
-
-function chc()
-{
-      xdg-open "$HOME/ownCloud/Shared/Palante Tech Shared/Administrative/Bookkeeping/hours worked charts 2016.ods"
-}
-
 function cr()
 {
       gpg --quiet --no-tty -d "$HOME/ownCloud/work/Credentials/"$1'_credentials.txt.gpg' 2> /dev/null
