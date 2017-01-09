@@ -582,17 +582,6 @@ _ssh_hosts () {
          done
       fi
     done < "$config"
-    config2="$HOME/ownCloud/Shared/Palante Tech Shared/SSH Keys/config_files/ssh_config"
-    while read key hosts; do
-      if [[ "$key" == (#i)host ]]; then
-         for host in ${(z)hosts}; do
-            case $host in
-            (*[*?]*) ;;
-            (*) config_hosts+=("$host") ;;
-            esac
-         done
-      fi
-    done < "$config2"
     if (( ${#config_hosts} )); then
       _wanted hosts expl 'remote host name' \
         compadd -M 'm:{a-zA-Z}={A-Za-z} r:|.=* r:|=*' "$@" $config_hosts
