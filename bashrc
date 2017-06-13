@@ -1,17 +1,21 @@
 function ssh()
 {
-  /usr/bin/ssh $@
-  if [ "$?" -eq 255 ]; then
-    /usr/bin/ssh -F ~/ownCloud/Shared/Palante\ Tech\ Shared/SSH\ Keys/config_files/ssh_config "$@" 
-  fi
+    ssh-combine; /usr/bin/ssh $@
+}
+
+function rsync()
+{
+    ssh-combine; /usr/bin/rsync $@
 }
 
 function scp()
 {
-  /usr/bin/scp -F ~/ownCloud/Shared/Palante\ Tech\ Shared/SSH\ Keys/config_files/ssh_config "$@"
-    if [ "$?" -eq 1 ]; then
-          /usr/bin/scp "$@"
-    fi
+    ssh-combine; /usr/bin/scp "$@"
+}
+
+function ssh-combine()
+{
+    cat $HOME/.ssh/config.d/* > $HOME/.ssh/config
 }
 
 function o()
