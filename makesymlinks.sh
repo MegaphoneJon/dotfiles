@@ -11,7 +11,7 @@ sh -c "$(curl -fsSL https://raw.github.com/robbyrussell/oh-my-zsh/master/tools/i
 dir=~/dotfiles                    # dotfiles directory
 
 olddir=~/dotfiles_old             # old dotfiles backup directory
-files="bashrc vimrc vim ptrrc gitconfig profile selected_editor zshenv"    # list of files/folders to symlink in homedir
+files="bashrc vim ptrrc gitconfig profile selected_editor zshenv"    # list of files/folders to symlink in homedir
 
 ##########
 
