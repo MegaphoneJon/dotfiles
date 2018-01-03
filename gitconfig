@@ -1,5 +1,10 @@
 [color]
 	ui = true
 [user]
-	name = Jon goldberg
-	email = jon@palantetech.coop
+	name = Jon Goldberg
+	email = jon@megaphonetech.com
+	signingkey = 46EC1ADE80C944922D7F91A70DC025928E9AA851
+[commit]
+	gpgsign = true
+[alias]
+	logs = log --show-signature
