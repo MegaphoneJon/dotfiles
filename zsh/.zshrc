@@ -145,6 +145,7 @@ function ssh-combine()
 
 
 work=~/ownCloud/work
+acd=~/local/acd/htdocs
 lava=~/local/lava
 dmaster=~/local/civicrm-buildkit/build/dmaster/sites/all/modules/civicrm
 dmaster2=~/local/civicrm-buildkit/build/dmaster2/sites/all/modules/civicrm
