@@ -22,16 +22,16 @@ if has("autocmd")
   augroup END
 endif
 syntax on
-set number
 set showcmd             " show command in bottom bar
-set cursorline          " highlight current line
 set wildmenu            " visual autocomplete for command menu
 set showmatch           " highlight matching [{()}]
 set incsearch           " search as characters are entered
 set hlsearch            " highlight matches
+set smartcase           " case-insensitive search when I search with all lowercase
 " turn off search highlight
 nnoremap <leader><space> :nohlsearch<CR>
 let mapleader=","       " leader is comma
 " jk is escape
 inoremap jk <esc>
 let g:syntastic_php_phpcs_args="--extensions=php --report=csv --standard=/home/jon/local/civicrm-buildkit/vendor/drupal/coder/coder_sniffer/Drupal"
+set mouse-=a
