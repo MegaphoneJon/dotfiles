@@ -3,6 +3,6 @@
 [user]
 	name = Jon Goldberg
 	email = jon@megaphonetech.com
-	signingkey = 46EC1ADE80C944922D7F91A70DC025928E9AA851
+	signingkey = D97C201352733A287157B256C2D2247364F9DB13
 [alias]
 	logs = log --show-signature
