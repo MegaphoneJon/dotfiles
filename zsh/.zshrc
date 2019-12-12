@@ -145,22 +145,32 @@ function ssh-combine()
 
 
 work=~/ownCloud/work
+clients=~/ownCloud/work/Clients
+ntf=~/local/9to5/htdocs
 acd=~/local/acd/htdocs
+agbu=~/local/agbud8/htdocs/web
+caf=~/local/caf/htdocs
+crm=~/local/crm/htdocs
+delta=~/local/delta/htdocs
+groundswell=~/local/groundswell/htdocs
+lava=~/local/lava/htdocs
+mt=~/local/megaphonetech/htdocs
+nasco=~/local/nasco/htdocs
 nwu=~/local/nwu/htdocs
-lava=~/local/lava
+ppc=~/local/ppc/htdocs
+swec=~/local/swec/htdocs
+tbusa=~/local/tbusa/htdocs
+ulr=~/local/ulr/htdocs
+wiscience=~/local/wiscience/htdocs
 dmaster=~/local/civicrm-buildkit/build/dmaster/sites/all/modules/civicrm
 dmaster2=~/local/civicrm-buildkit/build/dmaster2/sites/all/modules/civicrm
 bmaster=~/local/civicrm-buildkit/build/bmaster/modules/civicrm
-d44=~/local/civicrm-buildkit/build/d44/sites/all/modules/civicrm
-d45=~/local/civicrm-buildkit/build/d45/sites/all/modules/civicrm
-d46=~/local/civicrm-buildkit/build/d46/sites/all/modules/civicrm
 wpmaster=~/local/civicrm-buildkit/build/wpmaster/wp-content/plugins/civicrm/civicrm
-wp44=~/local/civicrm-buildkit/build/wp44/wp-content/plugins/civicrm/civicrm
-wp45=~/local/civicrm-buildkit/build/wp45/wp-content/plugins/civicrm/civicrm
-wp46=~/local/civicrm-buildkit/build/wp46/wp-content/plugins/civicrm/civicrm
-joomla46=~/local/civicrm-buildkit/build/joomla46
 backdrop=~/local/backdrop
-PATH=$PATH:/home/jon/local/wp-cli:/home/jon/local/civicrm-buildkit/bin
+if [ -d "$HOME/local/civicrm-buildkit" ] ; then
+    PATH=$PATH:/home/jon/local/civicrm-buildkit/bin
+fi
+
 
 CIVICRM_LOCALES=en_US
 umask 0002
