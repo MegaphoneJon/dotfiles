@@ -49,7 +49,6 @@ plugins=(git command-not-found pass sudo wp-cli drush ubuntu)
 
 # User configuration
 
-export PATH="$HOME/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:~/local/civix/:$HOME/local/wp-cli"
 # export MANPATH="/usr/local/man:$MANPATH"
 
 source $ZSH/oh-my-zsh.sh
