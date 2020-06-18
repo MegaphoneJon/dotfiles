@@ -7,7 +7,8 @@
 ########## Variables
 
 # Install oh-my-zsh
-sh -c "$(curl -fsSL https://raw.github.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
+curl --output ./oh-my-zsh-install.sh -fsSL https://raw.github.com/robbyrussell/oh-my-zsh/master/tools/install.sh
+env RUNZSH=no sh ./oh-my-zsh-install.sh
 dir=~/dotfiles                    # dotfiles directory
 
 olddir=~/dotfiles_old             # old dotfiles backup directory
