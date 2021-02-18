@@ -124,17 +124,22 @@ function ssh()
 
 function rsync()
 {
-  ssh-combine; /usr/bin/rsync $@
+  ssh-combine; /usr/bin/rsync -av --progress $@
 }
 
 function scp()
 {
-  ssh-combine; /usr/bin/scp "$@"
+  echo "use rsync instead"
 }
 
 function ssh-combine()
 {
   cat $HOME/.ssh/config.d/* > $HOME/.ssh/config
+}
+
+function become()
+{
+  sudo --preserve-env su --preserve-environment "$@"
 }
 
 #wp-cli
@@ -145,27 +150,11 @@ function ssh-combine()
 
 work=~/ownCloud/work
 clients=~/ownCloud/work/Clients
-ntf=~/local/9to5/htdocs
-acd=~/local/acd/htdocs
-agbu=~/local/agbud8/htdocs/web
-caf=~/local/caf/htdocs
-crm=~/local/crm/htdocs
-delta=~/local/delta/htdocs
-groundswell=~/local/groundswell/htdocs
-lava=~/local/lava/htdocs
-mt=~/local/megaphonetech/htdocs
-nasco=~/local/nasco/htdocs
-nwu=~/local/nwu/htdocs
-ppc=~/local/ppc/htdocs
-swec=~/local/swec/htdocs
-tbusa=~/local/tbusa/htdocs
-ulr=~/local/ulr/htdocs
-wiscience=~/local/wiscience/htdocs
-dmaster=~/local/civicrm-buildkit/build/dmaster/sites/all/modules/civicrm
-dmaster2=~/local/civicrm-buildkit/build/dmaster2/sites/all/modules/civicrm
+ans=~/local/ansible
+dmaster=~/local/civicrm-buildkit/build/dmaster/web/sites/all/modules/civicrm
 bmaster=~/local/civicrm-buildkit/build/bmaster/modules/civicrm
 wpmaster=~/local/civicrm-buildkit/build/wpmaster/wp-content/plugins/civicrm/civicrm
-backdrop=~/local/backdrop
+
 if [ -d "$HOME/local/civicrm-buildkit" ] ; then
     PATH=$PATH:/home/jon/local/civicrm-buildkit/bin
 fi
@@ -173,6 +162,7 @@ fi
 
 CIVICRM_LOCALES=en_US
 umask 0002
+eval "$(fasd --init auto)"
 
 # Load all files from .shell/rc.d directory
 if [ -d $HOME/.shellrc/rc.d ]; then
