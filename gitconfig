@@ -6,3 +6,5 @@
 	signingkey = D97C201352733A287157B256C2D2247364F9DB13
 [alias]
 	logs = log --show-signature
+[core]
+	excludesfile = /home/jon/dotfiles/.gitignore_global
