@@ -2,6 +2,9 @@ export PATH="$HOME/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/
 if [ "$HOSTNAME" = zabuntu ]; then
   export PATH="$HOME/local/bin:$PATH"
 fi
+if [ "$HOSTNAME" = irene ]; then
+  export PATH="$HOME/local/bin:$HOME/local/civicrm-buildkit/bin:$PATH"
+fi
 [[ -z $XDG_CONFIG_HOME ]] && export XDG_CONFIG_HOME="$HOME/.config"
 export ZDOTDIR="$HOME/dotfiles/zsh"
 export VIMINIT='let $MYVIMRC="$HOME/dotfiles/vim/vimrc" | source $MYVIMRC'
