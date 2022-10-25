@@ -7,7 +7,7 @@ local return_code="%(?..%{$fg[red]%}%? ↵%{$reset_color%})"
 
 # change the prompt color based on local, Palante dev, or live server
 case $HOST in
-  zabuntu | castor | irene)
+  zabuntu | castor | aeroplane)
     HOSTCOLOR=032
     ;;
   orange)

@@ -8,3 +8,7 @@
 	logs = log --show-signature
 [core]
 	excludesfile = /home/jon/dotfiles/.gitignore_global
+[safe]
+	directory = /home/jon/local/delta/web
+	directory = /home/jon/local/delta/web/wp-content/civicrm-custom/extensions/fieldlookup
+	directory = /home/jon/local/neftp/web
