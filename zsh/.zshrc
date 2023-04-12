@@ -152,8 +152,7 @@ work=~/ownCloud/work
 clients=~/ownCloud/work/Clients
 ans=~/local/ansible
 dmaster=~/local/civicrm-buildkit/build/dmaster/web/sites/all/modules/civicrm
-bmaster=~/local/civicrm-buildkit/build/bmaster/modules/civicrm
-wpmaster=~/local/civicrm-buildkit/build/wpmaster/wp-content/plugins/civicrm/civicrm
+wpmaster=~/local/civicrm-buildkit/build/wpmaster/web/wp-content/plugins/civicrm/civicrm
 
 if [ -d "$HOME/local/civicrm-buildkit" ] ; then
     PATH=$PATH:/home/jon/local/civicrm-buildkit/bin
