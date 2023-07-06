@@ -194,5 +194,23 @@
 	directory = /home/jon/local/pf/web/wp-content/civicrm-custom/extensions/habitat
 	directory = /home/jon/local/pf/web/wp-content/plugins/habitat-wp
 	directory = /home/jon/local/breaktheshackles/web
+	directory = /home/jon/local/journal.leftroots/web
+	directory = /home/jon/local/journal.leftroots/web/wp-content/plugins/habitat-wp
+	directory = /home/jon/local/atn
+	directory = /home/jon/local/boa/web/sites/all/civicrm-custom/extensions/habitat
+	directory = /home/jon/local/cadre.leftroots/web
+	directory = /home/jon/local/leonardo-d10
+	directory = /home/jon/local/uaf/web/wp-content/civicrm-custom/extensions/com.megaphonetech.monitoring
+	directory = /home/jon/local/uaf/web/wp-content/civicrm-custom/extensions/com.megaphonetech.monitoring
+	directory = /home/jon/local/uaf/web/wp-content/civicrm-custom/extensions/com.megaphonetech.monitoring
+	directory = /home/jon/local/uaf/web/wp-content/civicrm-custom/extensions/com.megaphonetech.monitoring
+	directory = /home/jon/local/uaf/web/wp-content/civicrm-custom/extensions/habitat
+	directory = /home/jon/local/uaf/web/wp-content/plugins/habitat-wp
+	directory = /home/jon/local/breaktheshackles/web/wp-content/plugins/habitat-wp
+	directory = /home/jon/local/civicrm-buildkit/build/dmaster/web/sites/all/modules/civicrm/tools/extensions/sktokens
+	directory = /home/jon/local/atn/web/sites/all/civicrm-custom/extensions/habitat
+  directory = /var/www/alltogethernowvt.org
+  directory = /var/www/atn.megaphonetech.com
+
 [pull]
 	rebase = false
