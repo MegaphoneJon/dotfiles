@@ -12,3 +12,5 @@ export VIMDOTDIR="$HOME/dotfiles/vim"
 export ZSH_CUSTOM="$HOME/dotfiles/oh-my-zsh/custom"
 alias fd=fdfind
 alias find='echo "use fd instead"'
+
+if [ -e /home/jon/.nix-profile/etc/profile.d/nix.sh ]; then . /home/jon/.nix-profile/etc/profile.d/nix.sh; fi # added by Nix installer
