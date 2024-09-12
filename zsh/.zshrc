@@ -173,3 +173,7 @@ fi
 # FIXME: I don't think I need this now that I've switched my strategy for combined SSH configs
 # Set the fpath (for custom completions)
 fpath=( ~/dotfiles/zsh_completions  "${fpath[@]}")
+HISTFILE=~/.zsh_history
+HISTSIZE=999999999
+SAVEHIST=$HISTSIZE
+bindkey '^R' history-incremental-pattern-search-backward

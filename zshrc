@@ -83,7 +83,3 @@ source $ZSH/oh-my-zsh.sh
 # Example aliases
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
-HISTFILE=~/.zsh_history
-HISTSIZE=999999999
-SAVEHIST=$HISTSIZE
-bindkey '^R' history-incremental-pattern-search-backward
