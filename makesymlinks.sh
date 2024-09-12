@@ -12,7 +12,7 @@ env RUNZSH=no sh ./oh-my-zsh-install.sh
 dir=~/dotfiles                    # dotfiles directory
 
 olddir=~/dotfiles_old             # old dotfiles backup directory
-files="bashrc vim ptrrc gitconfig profile selected_editor zshenv"    # list of files/folders to symlink in homedir
+files="bashrc vim ptrrc gitconfig profile selected_editor zshenv zshrc"    # list of files/folders to symlink in homedir
 
 ##########
 
