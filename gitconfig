@@ -222,6 +222,40 @@
 	directory = /home/jon/local/reamp/web/wp-content/civicrm-custom/extensions/com.megaphonetech.monitoring
 	directory = /home/jon/local/reamp/web/wp-content/civicrm-custom/extensions/habitat
 	directory = /home/jon/local/civicrm-buildkit/build/dmaster/web/sites/all/modules/civicrm
+	directory = /home/jon/local/sos.leftroots/web
+	directory = /home/jon/local/cadre.leftroots/web/wp-content/civicrm-custom/extensions/habitat
+	directory = /home/jon/local/cadre.leftroots/web/wp-content/plugins/habitat-wp
+	directory = /home/jon/local/civicrm-buildkit/build/dmaster/web/sites/all/modules/civicrm/tools/extensions/formprotection
+	directory = /home/jon/local/reamp/web/.git
+	directory = /home/jon/local/cb/web/sites/all/civicrm-custom/extensions/habitat
+	directory = /home/jon/local/civicrm-buildkit/build/dmaster/web/sites/all/modules/civicrm/tools/extensions/cdntaxreceipts
+	directory = /home/jon/local/agbu/web/sites/all/civicrm/extensions/paymentmethodbydomain
+	directory = /home/jon/local/boa/web/sites/all/civicrm-custom/extensions/com.megaphonetech.monitoring
+	directory = /home/jon/local/crm/web/sites/all/modules/inventory_views
+	directory = /home/jon/local/crm/web/sites/all/civicrm/extensions/habitat
+	directory = /home/jon/local/civicrm-buildkit/build/dmaster/web/sites/all/modules/civicrm/packages
+	directory = /home/jon/local/uaf/old
+	directory = /home/jon/local/civicrm-buildkit/build/dmaster/web/sites/all/modules/civicrm/tools/extensions/nonprimaryquicksearch
+	directory = /home/jon/local/fld/web
+	directory = /home/jon/local/atn/web/sites/all/civicrm-custom/extensions/com.megaphonetech.monitoring
+	directory = /home/jon/local/wrl/web/sites/all/civicrm/extensions/com.megaphonetech.monitoring
+	directory = /home/jon/local/wrl/web/sites/all/civicrm/extensions/habitat
+	directory = /home/jon/local/cadre.leftroots/web/wp-content/civicrm-custom/extensions/com.megaphonetech.monitoring
+	directory = /home/jon/local/lm/web/sites/all/civicrm-custom/extensions/habitat
+	directory = /home/jon/local/crm/web/sites/all/civicrm/extensions/com.megaphonetech.monitoring
+	directory = /home/jon/local/act/web/sites/all/civicrm/extensions/com.megaphonetech.monitoring
+	directory = /home/jon/local/act/web/sites/all/civicrm/extensions/habitat
+	directory = /home/jon/local/atn
+	directory = /home/jon/local/uaf/web/wp-content/themes/uaf-child
+	directory = /home/jon/local/wiscience/web/wp-content/civicrm-custom/extensions/habitat
+	directory = /home/jon/local/nsso
+	directory = /home/jon/local/ajm/web
+	directory = /home/jon/local/njepipsa/web
+	directory = /home/jon/local/nsso-public
+	directory = /home/jon/local/song/web/sites/all/civicrm/extensions/actblue
+	directory = /home/jon/local/agbu/web/modules/custom/agbu_webform_ticket_tracking
+	directory = /home/jon/local/agbu/web/sites/all/civicrm/extensions/bettermultipleregistration
+
 [pull]
 	rebase = false
 [init]
