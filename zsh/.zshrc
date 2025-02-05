@@ -127,11 +127,6 @@ function rsync()
   ssh-combine; /usr/bin/rsync -av --progress $@
 }
 
-function scp()
-{
-  echo "use rsync instead"
-}
-
 function ssh-combine()
 {
   cat $HOME/.ssh/config.d/* > $HOME/.ssh/config
@@ -153,6 +148,7 @@ clients=~/ownCloud/work/Clients
 ans=~/local/ansible
 dmaster=~/local/civicrm-buildkit/build/dmaster/web/sites/all/modules/civicrm
 wpmaster=~/local/civicrm-buildkit/build/wpmaster/web/wp-content/plugins/civicrm/civicrm
+smaster=~/local/civicrm-buildkit/build/smaster/web/core
 
 if [ -d "$HOME/local/civicrm-buildkit" ] ; then
     PATH=$PATH:/home/jon/local/civicrm-buildkit/bin
