@@ -36,4 +36,7 @@ for file in $files; do
     echo "Creating symlink to $file in home directory."
     ln -s $dir/$file ~/.$file
 done
-ln -s $dir/kitty.conf $HOME/.config/kitty
+# FIXME: $HOSTCOLOR is set in the theme to 032 for my local laptops. That's a bit hacky.
+if [[ "$HOSTCOLOR" == "032" ]]; then
+  ln -s $dir/kitty.conf $HOME/.config/kitty
+fi
