@@ -177,3 +177,27 @@ HISTFILE=~/.zsh_history
 HISTSIZE=999999999
 SAVEHIST=$HISTSIZE
 bindkey '^R' history-incremental-pattern-search-backward
+
+# Everything down to the 2 add-zsh-hook commands is to set window title in kitty when SSHing.
+autoload -Uz add-zsh-hook
+
+function _update_title_preexec() {
+  local cmd="$1"
+
+  if [[ "$cmd" == ssh* ]]; then
+    # Extract hostname from ssh command (supporting user@host)
+    local host="$(echo "$cmd" | awk '{print $2}' | cut -d@ -f2)"
+    kitty @ set-window-title "ssh ${host:-$cmd}"
+  else
+    kitty @ set-window-title "$cmd"
+  fi
+}
+
+function _update_title_precmd() {
+  # Set a fallback title when no command is running
+  local cwd="${PWD/#$HOME/~}"  # Tilde for home dir
+  kitty @ set-window-title "$USER@$HOSTNAME: $cwd"
+}
+
+add-zsh-hook preexec _update_title_preexec
+add-zsh-hook precmd _update_title_precmd
