@@ -7,8 +7,11 @@
 ########## Variables
 
 # Install oh-my-zsh
-curl --output ./oh-my-zsh-install.sh -fsSL https://raw.github.com/robbyrussell/oh-my-zsh/master/tools/install.sh
-env RUNZSH=no sh ./oh-my-zsh-install.sh
+if [[ -z "$ZSH" || ! -f "$ZSH/oh-my-zsh.sh" ]]; then
+  curl --output ./oh-my-zsh-install.sh -fsSL https://raw.github.com/robbyrussell/oh-my-zsh/master/tools/install.sh
+  #Not sure what this does, and suspect it's broken because what is "no" doing there?
+  #env RUNZSH=no sh ./oh-my-zsh-install.sh
+fi
 dir=~/dotfiles                    # dotfiles directory
 
 olddir=~/dotfiles_old             # old dotfiles backup directory
@@ -33,4 +36,4 @@ for file in $files; do
     echo "Creating symlink to $file in home directory."
     ln -s $dir/$file ~/.$file
 done
-
+ln -s $dir/kitty.conf $HOME/.config/kitty
