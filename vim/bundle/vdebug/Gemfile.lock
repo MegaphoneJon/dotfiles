@@ -62,7 +62,7 @@ GEM
     rspec-mocks (2.13.1)
     sys-uname (1.2.2)
       ffi (~> 1.1)
-    thor (1.1.0)
+    thor (1.4.0)
     thread_safe (0.3.6)
     tzinfo (2.0.6)
       concurrent-ruby (~> 1.0)
