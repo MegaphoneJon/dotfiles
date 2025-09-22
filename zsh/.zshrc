@@ -173,3 +173,4 @@ HISTFILE=~/.zsh_history
 HISTSIZE=999999999
 SAVEHIST=$HISTSIZE
 bindkey '^R' history-incremental-pattern-search-backward
+export GPG_TTY=$(tty)
