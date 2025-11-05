@@ -196,5 +196,5 @@ function _update_title_precmd() {
   kitty @ set-window-title "$USER@$HOSTNAME: $cwd"
 }
 
-add-zsh-hook preexec _update_title_preexec
-add-zsh-hook precmd _update_title_precmd
+# add-zsh-hook preexec _update_title_preexec
+# add-zsh-hook precmd _update_title_precmd
