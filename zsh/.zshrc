@@ -45,7 +45,7 @@ ZSH_THEME="af-magic"
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(git command-not-found pass sudo wp-cli drush ubuntu)
+plugins=(git command-not-found pass sudo wp-cli drush ubuntu ag fzf)
 
 # User configuration
 
@@ -68,6 +68,13 @@ source $ZSH/oh-my-zsh.sh
 
 # ssh
 # export SSH_KEY_PATH="~/.ssh/dsa_id"
+
+# In SSH sessions without a forwarded agent, start one and clean it up on exit
+if [[ -n "$SSH_CONNECTION" && -z "$SSH_AUTH_SOCK" ]]; then
+  eval $(ssh-agent -s) > /dev/null
+  ssh-add ~/.ssh/id_ed25519
+  trap 'kill $SSH_AGENT_PID 2>/dev/null' EXIT
+fi
 
 # Set personal aliases, overriding those provided by oh-my-zsh libs,
 # plugins, and themes. Aliases can be placed here, though oh-my-zsh
@@ -142,7 +149,6 @@ function become()
 #bashcompinit
 #source ~/local/wp-cli/wp-completion.bash
 
-
 work=~/ownCloud/work
 clients=~/ownCloud/work/Clients
 ans=~/local/ansible
@@ -198,3 +204,5 @@ function _update_title_precmd() {
 
 # add-zsh-hook preexec _update_title_preexec
 # add-zsh-hook precmd _update_title_precmd
+export PATH="$HOME/.local/bin:$PATH"
+export REPORTTIME=30
