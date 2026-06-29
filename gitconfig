@@ -255,6 +255,8 @@
 	directory = /home/jon/local/song/web/sites/all/civicrm/extensions/actblue
 	directory = /home/jon/local/agbu/web/modules/custom/agbu_webform_ticket_tracking
 	directory = /home/jon/local/agbu/web/sites/all/civicrm/extensions/bettermultipleregistration
+	directory = /opt/sites/act
+	directory = /opt/docker/caddy
 
 [pull]
 	rebase = false
