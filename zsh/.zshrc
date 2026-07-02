@@ -7,39 +7,11 @@ export ZSH=$HOME/.oh-my-zsh
 # time that oh-my-zsh is loaded.
 ZSH_THEME="af-magic"
 
-# Uncomment the following line to use case-sensitive completion.
-#CASE_SENSITIVE="true"
-
-# Uncomment the following line to disable bi-weekly auto-update checks.
-# DISABLE_AUTO_UPDATE="true"
-
-# Uncomment the following line to change how often to auto-update (in days).
-# export UPDATE_ZSH_DAYS=13
-
-# Uncomment the following line to disable colors in ls.
-# DISABLE_LS_COLORS="true"
-
-# Uncomment the following line to disable auto-setting terminal title.
-# DISABLE_AUTO_TITLE="true"
-
-# Uncomment the following line to enable command auto-correction.
-# ENABLE_CORRECTION="true"
-
-# Uncomment the following line to display red dots whilst waiting for completion.
-# COMPLETION_WAITING_DOTS="true"
-
 # Uncomment the following line if you want to disable marking untracked files
 # under VCS as dirty. This makes repository status check for large repositories
 # much, much faster.
 # DISABLE_UNTRACKED_FILES_DIRTY="true"
 
-# Uncomment the following line if you want to change the command execution time
-# stamp shown in the history command output.
-# The optional three formats: "mm/dd/yyyy"|"dd.mm.yyyy"|"yyyy-mm-dd"
-# HIST_STAMPS="mm/dd/yyyy"
-
-# Would you like to use another custom folder than $ZSH/custom?
-# ZSH_CUSTOM=/path/to/new-custom-folder
 
 # Which plugins would you like to load? (plugins can be found in ~/.oh-my-zsh/plugins/*)
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
@@ -204,13 +176,31 @@ function _update_title_preexec() {
 function _update_title_precmd() {
   # Set a fallback title when no command is running
   local cwd="${PWD/#$HOME/~}"  # Tilde for home dir
-  kitty @ set-window-title "$USER@$HOSTNAME: $cwd"
+  # Sets the window title using terminal escape codes
+  print -Pn "\e]2;%n@%m: $cwd\a"
 }
 
-# add-zsh-hook preexec _update_title_preexec
-# add-zsh-hook precmd _update_title_precmd
+case $HOST in
+  june)
+    add-zsh-hook preexec _update_title_preexec
+    add-zsh-hook precmd _update_title_precmd
+    ;;
+  *)
+    ;;
+esac
+
 export PATH="$HOME/.local/bin:$PATH"
+# shows time of execution for commands over 30 secs runtime
 export REPORTTIME=30
 
 # fzf integration
 source <(fzf --zsh)
+
+# Run docker commands anywhere in a gitroot
+dockerc() {
+  (
+    cd "$(git rev-parse --show-toplevel)" || return 1
+    export $(grep -v '^#' .docker/.env | xargs)
+    sudo -E docker compose "$@"
+  )
+}
