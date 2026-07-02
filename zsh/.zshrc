@@ -69,11 +69,16 @@ source $ZSH/oh-my-zsh.sh
 # ssh
 # export SSH_KEY_PATH="~/.ssh/dsa_id"
 
-# In SSH sessions without a forwarded agent, start one and clean it up on exit
-if [[ -n "$SSH_CONNECTION" && -z "$SSH_AUTH_SOCK" ]]; then
-  eval $(ssh-agent -s) > /dev/null
-  ssh-add ~/.ssh/id_ed25519
-  trap 'kill $SSH_AGENT_PID 2>/dev/null' EXIT
+if [[ -n "$SSH_CONNECTION" ]]; then
+  # SSH session: start a per-session agent if none is forwarded
+  if [[ -z "$SSH_AUTH_SOCK" ]]; then
+    eval $(ssh-agent -s) > /dev/null
+    ssh-add ~/.ssh/id_ed25519
+    trap 'kill $SSH_AGENT_PID 2>/dev/null' EXIT
+  fi
+else
+  # Local session: point at the fixed systemd-managed agent socket
+  export SSH_AUTH_SOCK="/run/user/$(id -u)/ssh-agent.socket"
 fi
 
 # Set personal aliases, overriding those provided by oh-my-zsh libs,
@@ -157,7 +162,7 @@ wpmaster=~/local/civicrm-buildkit/build/wpmaster/web/wp-content/plugins/civicrm/
 smaster=~/local/civicrm-buildkit/build/smaster/web/core
 
 if [ -d "$HOME/local/civicrm-buildkit" ] ; then
-    PATH=$PATH:/home/jon/local/civicrm-buildkit/bin
+    PATH=$PATH:/home/jon/local/civicrm-buildkit/bin:/snap/bin
 fi
 
 
@@ -206,3 +211,6 @@ function _update_title_precmd() {
 # add-zsh-hook precmd _update_title_precmd
 export PATH="$HOME/.local/bin:$PATH"
 export REPORTTIME=30
+
+# fzf integration
+source <(fzf --zsh)
