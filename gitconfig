@@ -11,15 +11,6 @@
 	autocrlf = input
 [init]
 	defaultBranch = main
-[safe]
-	directory = /home/jon/local/*
-	directory = /etc/modsecurity/crs
-	directory = /etc/modsecurity/civicrm-plugin
-	directory = /etc/modsecurity/plugins/civicrm
-	directory = /usr/local/src/drush8
-	directory = /usr/local/src/drush7
-	directory = /opt/sites/act
-	directory = /opt/docker/caddy
 
 [pull]
 	rebase = false
