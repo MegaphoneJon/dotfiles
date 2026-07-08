@@ -2,9 +2,6 @@
 export ZSH=$HOME/.oh-my-zsh
 
 # Set name of the theme to load.
-# Look in ~/.oh-my-zsh/themes/
-# Optionally, if you set this to "random", it'll load a random theme each
-# time that oh-my-zsh is loaded.
 ZSH_THEME="af-magic"
 
 # Uncomment the following line if you want to disable marking untracked files
@@ -21,22 +18,8 @@ plugins=(git command-not-found pass sudo wp-cli drush ubuntu ag fzf direnv)
 
 # User configuration
 
-# export MANPATH="/usr/local/man:$MANPATH"
-
 source $ZSH/oh-my-zsh.sh
 
-# You may need to manually set your language environment
-# export LANG=en_US.UTF-8
-
-# Preferred editor for local and remote sessions
-# if [[ -n $SSH_CONNECTION ]]; then
-#   export EDITOR='vim'
-# else
-#   export EDITOR='mvim'
-# fi
-
-# Compilation flags
-# export ARCHFLAGS="-arch x86_64"
 
 # ssh
 # export SSH_KEY_PATH="~/.ssh/dsa_id"
@@ -66,40 +49,6 @@ function o()
       xdg-open "$1"
 }
 
-#close and reopen a file (works with LibreOffice, probably other stuff)
-function co()
-{
-  xdotool search "$1" windowactivate --sync key --window 0 --clearmodifiers alt+F4
-  xdg-open "$1"
-}
-
-function cr()
-{
-      gpg --quiet --no-tty -d "$HOME/ownCloud/work/Credentials/"$1'_credentials.txt.gpg' 2> /dev/null
-}
-
-function cro()
-{
-      gpg -do '/tmp/'$1'_credentials.txt' "$HOME/ownCloud/work/Credentials/"$1'_credentials.txt.gpg'
-            vi '/tmp/'$1'_credentials.txt'
-}
-
-function cre() {
-            gpg -eso "$HOME/ownCloud/work/Credentials/"$1'_credentials.txt.gpg' -r 0DC025928E9AA851 '/tmp/'$1'_credentials.txt'
-            rm /tmp/*_credentials.txt
-}
-
-function crg() {
-      gpg --quiet -d "$HOME/ownCloud/work/Credentials/"$1'_credentials.txt.gpg' | grep git -A 1
-}
-
-function gpge() {
-  gpg -e -r 0DC025928E9AA851 "$1" 
-}
-
-function me() {
-      echo "Maiolica" | ssvncviewer -scale .8 -autopass -encodings "zywrle tight hextile copyrect" Jon-PC &> /dev/null &
-}
 
 function ssh()
 {
@@ -120,11 +69,6 @@ function become()
 {
   sudo --preserve-env su --preserve-environment "$@"
 }
-
-#wp-cli
-#autoload bashcompinit
-#bashcompinit
-#source ~/local/wp-cli/wp-completion.bash
 
 work=~/ownCloud/work
 clients=~/ownCloud/work/Clients
@@ -155,7 +99,7 @@ fpath=( ~/dotfiles/zsh_completions  "${fpath[@]}")
 HISTFILE=~/.zsh_history
 HISTSIZE=999999999
 SAVEHIST=$HISTSIZE
-bindkey '^R' history-incremental-pattern-search-backward
+#bindkey '^R' history-incremental-pattern-search-backward
 export GPG_TTY=$(tty)
 
 # Everything down to the 2 add-zsh-hook commands is to set window title in kitty when SSHing.
