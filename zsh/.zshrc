@@ -14,7 +14,11 @@ ZSH_THEME="af-magic"
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(git command-not-found pass sudo wp-cli drush ubuntu ag fzf direnv)
+if [ "$HOST" = zabuntu ]; then
+  plugins=(git command-not-found pass sudo wp-cli drush ubuntu ag fzf direnv)
+else
+  plugins=(git command-not-found pass sudo wp-cli drush ubuntu fzf direnv)
+fi
 
 # User configuration
 
@@ -84,7 +88,9 @@ fi
 
 CIVICRM_LOCALES=en_US
 umask 0002
-eval "$(fasd --init auto)"
+if [ -f /usr/bin/fasd ]; then
+  eval "$(fasd --init auto)"
+fi
 
 # Load all files from .shell/rc.d directory
 if [ -d $HOME/.shellrc/rc.d ]; then
@@ -138,7 +144,9 @@ export PATH="$HOME/.local/bin:$PATH"
 export REPORTTIME=30
 
 # fzf integration
-source <(fzf --zsh)
+if command -v fzf &>/dev/null; then
+  source <(fzf --zsh 2>/dev/null)
+fi
 
 # Run docker commands anywhere in a gitroot
 dockerc() {
