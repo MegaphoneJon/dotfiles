@@ -30,7 +30,7 @@ source $ZSH/oh-my-zsh.sh
 
 if [[ -n "$SSH_CONNECTION" ]]; then
   # SSH session: start a per-session agent if none is forwarded
-  if [[ -z "$SSH_AUTH_SOCK" ]]; then
+  if [[ -z "$SSH_AUTH_SOCK" && -f ~/.ssh/id_ed25519 ]]; then
     eval $(ssh-agent -s) > /dev/null
     ssh-add ~/.ssh/id_ed25519
     trap 'kill $SSH_AGENT_PID 2>/dev/null' EXIT
@@ -144,6 +144,7 @@ export PATH="$HOME/.local/bin:$PATH"
 export REPORTTIME=30
 
 # fzf integration
+# FIXME: Remove the if guard when all servers are on Debian 13+ (fzf 0.48+)
 if command -v fzf &>/dev/null; then
   source <(fzf --zsh 2>/dev/null)
 fi
