@@ -204,3 +204,8 @@ dockerc() {
     sudo -E docker compose "$@"
   )
 }
+
+clogtail() {                                                                                                                                                                                                               jon@zabuntu
+  tail -f "$(ls -t $clogdir/CiviCRM.1.[0-9a-f]*.log 2>/dev/null | head -n 1)"
+}
+
