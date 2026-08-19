@@ -24,21 +24,17 @@ fi
 
 source $ZSH/oh-my-zsh.sh
 
-
-# ssh
-# export SSH_KEY_PATH="~/.ssh/dsa_id"
-
-if [[ -n "$SSH_CONNECTION" ]]; then
-  # SSH session: start a per-session agent if none is forwarded
-  if [[ -z "$SSH_AUTH_SOCK" && -f ~/.ssh/id_ed25519 ]]; then
-    eval $(ssh-agent -s) > /dev/null
-    ssh-add ~/.ssh/id_ed25519
-    trap 'kill $SSH_AGENT_PID 2>/dev/null' EXIT
-  fi
-else
-  # Local session: point at the fixed systemd-managed agent socket
-  export SSH_AUTH_SOCK="/run/user/$(id -u)/ssh-agent.socket"
-fi
+# if [[ -n "$SSH_CONNECTION" ]]; then
+#   # SSH session: start a per-session agent if none is forwarded
+#   if [[ -z "$SSH_AUTH_SOCK" && -f ~/.ssh/id_ed25519 ]]; then
+#     eval $(ssh-agent -s) > /dev/null
+#     ssh-add ~/.ssh/id_ed25519
+#     trap 'kill $SSH_AGENT_PID 2>/dev/null' EXIT
+#   fi
+# else
+#   # Local session: point at the fixed systemd-managed agent socket
+#   export SSH_AUTH_SOCK="/run/user/$(id -u)/ssh-agent.socket"
+# fi
 
 # Set personal aliases, overriding those provided by oh-my-zsh libs,
 # plugins, and themes. Aliases can be placed here, though oh-my-zsh
