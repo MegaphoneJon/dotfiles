@@ -33,7 +33,7 @@ source $ZSH/oh-my-zsh.sh
 #   fi
 # else
 #   # Local session: point at the fixed systemd-managed agent socket
-#   export SSH_AUTH_SOCK="/run/user/$(id -u)/ssh-agent.socket"
+   export SSH_AUTH_SOCK="/run/user/$(id -u)/ssh-agent.socket"
 # fi
 
 # Set personal aliases, overriding those provided by oh-my-zsh libs,
