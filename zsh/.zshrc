@@ -49,22 +49,6 @@ function o()
       xdg-open "$1"
 }
 
-
-function ssh()
-{
-  ssh-combine; /usr/bin/ssh $@
-}
-
-function rsync()
-{
-  ssh-combine; /usr/bin/rsync -av --progress $@
-}
-
-function ssh-combine()
-{
-  cat $HOME/.ssh/config.d/* > $HOME/.ssh/config
-}
-
 function become()
 {
   sudo --preserve-env su --preserve-environment "$@"
