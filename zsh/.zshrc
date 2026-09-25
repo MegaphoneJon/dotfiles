@@ -73,7 +73,7 @@ if [ -f /usr/bin/fasd ]; then
 fi
 
 # Load all files from .shell/rc.d directory
-if [ -d $HOME/.shellrc/rc.d ]; then
+if [ -d $HOME/.shellrc/rc.d ] && [ "$EUID" -ne "0" ]; then
   for file in $HOME/.shellrc/rc.d/*.sh; do
     source $file
   done
