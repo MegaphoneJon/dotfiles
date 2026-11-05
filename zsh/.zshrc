@@ -79,6 +79,7 @@ if [ -d $HOME/.shellrc/rc.d ] && [ "$EUID" -ne "0" ]; then
   done
 fi
 
+zstyle ':omz:update' frequency 90
 # FIXME: I don't think I need this now that I've switched my strategy for combined SSH configs
 # Set the fpath (for custom completions)
 fpath=( ~/dotfiles/zsh_completions  "${fpath[@]}")
